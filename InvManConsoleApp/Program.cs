@@ -17,23 +17,23 @@ namespace InvManConsoleApp
                .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
 
             IConfigurationRoot configuration = builder.Build();
-            InvManSettingsConfig iMSSettingsConfig = new InvManSettingsConfig();
-            configuration.GetSection("IMSSettings").Bind(iMSSettingsConfig);
+            InvManSettingsConfig invManSettingsConfig = new InvManSettingsConfig();
+            configuration.GetSection("InvManSettings").Bind(invManSettingsConfig);
 
-            string importFileLocation = iMSSettingsConfig.ImportFileLocation;
+            string importFileLocation = invManSettingsConfig.ImportFileLocation;
 //            string errorFileLocation = ConfigurationManager.AppSettings["ErrorFileLocation"];
 
             if (importFileLocation != "")
             {
-                string[] currentInventoryFiles = Directory.GetFiles(iMSSettingsConfig.ImportFileLocation);
+                string[] currentInventoryFiles = Directory.GetFiles(invManSettingsConfig.ImportFileLocation);
                 foreach (string fileName in currentInventoryFiles)
                 {
                     List<Item> items = GetItemsFromFile(fileName);
                     items.ForEach(i => i.UpdateName());
                     items.ForEach(i => i.UpdateSellIn());
                     items.ForEach(i => i.UpdateQuality());
-                    WriteItemsToFile(iMSSettingsConfig.ExportFileLocation, fileName, items);
-                    MoveToProcessed(fileName, iMSSettingsConfig.ProcessedFileLocation);
+                    WriteItemsToFile(invManSettingsConfig.ExportFileLocation, fileName, items);
+                    MoveToProcessed(fileName, invManSettingsConfig.ProcessedFileLocation);
                 }
             }
         }
