@@ -7,7 +7,14 @@ This app has been developed using Visual Studio 2019 and targets .Net Core 3.1 .
 Before building the app, it would be benefical to have these available. I can make other .Net targets available on request
 
 ## Building the app
-After cloning the repository and opening the solution in visual studio, you'll need to set the path names for the folders that contain the files to be processed (ImportFileLocation), the current inventory files that have been processed (ProcessedFileLocation) and the new inventory files (ExportFileLocation). The path names are aet in the appsettings.json file of the InvManConsoleApp project.
+After cloning the repository and opening the solution in visual studio, build the application. This can be done in visual studio as follows: <br />
+1. Right-Click on the InvManConsoleApp project ,br />
+2. Choose Build from the menu that appears <br />
+
+As I am new to GitHub, I am currently researching how to set up a continuous build.
+
+## Configuring the app
+After building the app, you'll need to set the path names for the folders that contain the files to be processed (ImportFileLocation), the current inventory files that have been processed (ProcessedFileLocation) and the new inventory files (ExportFileLocation). The path names are aet in the appsettings.json file which is in the same folder location as the InvManConsoleApp executable.
 
 ## Testing the app
 Unit tests have been written and are in the project InvManConsoleAppTest. These can be run through the test explorer (Ctrl-E, T) in visual studio.
