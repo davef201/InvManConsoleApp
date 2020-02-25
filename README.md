@@ -12,3 +12,11 @@ After cloning the repository and opening the solution in visual studio, you'll n
 ## Testing the app
 
 ## Running the app
+As this is a console application, it can be run in a couple of ways: <br />
+-- From the command prompt <br />
+-- From the windows task scheduler or equivalent
+
+
+## Improvements / Questions
+This applcation has been developed based on the information provided. As such certain assumptions had to be made, for example, item names do not contain more than two words.
+
